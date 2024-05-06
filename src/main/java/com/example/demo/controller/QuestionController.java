@@ -11,7 +11,7 @@ import java.util.Set;
 
 
 @RestController
-@RequestMapping("question")
+@RequestMapping("questions")
 public class QuestionController {
 
     private final QuestionService questionService;
@@ -26,7 +26,7 @@ public class QuestionController {
         questionService.saveQuestionDto(question, answers, correctAnswer, categories);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public Set<GetQuestionDto> getAllQuestions() {
         return questionService.findAllDto();
     }
